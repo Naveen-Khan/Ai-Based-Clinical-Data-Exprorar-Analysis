@@ -2,11 +2,9 @@
 
 ## 1. Problem Statement
 
-Clinical research data is often stored across multiple structured database
-tables, making it difficult for researchers to quickly define patient
-cohorts, retrieve relevant records, and determine whether the available data
-is reliable enough for a specific analysis.
+Hospital data is complex, fragmented, and often messy. Researchers spend hours writing SQL and manually checking for data errors. ClinData Explorer solves this by providing a **transparent, AI-driven workspace** where researchers can define cohorts using plain English, receive instant data quality audits, and trace every single finding back to its source—all without sacrificing reproducibility or safety.
 
+---
 Researchers may need to understand:
 
 - Which patients satisfy specific research criteria?
