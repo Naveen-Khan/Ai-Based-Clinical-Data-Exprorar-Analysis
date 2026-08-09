@@ -132,3 +132,27 @@ MIMIC-IV Clinical Database Demo v2.2 – a publicly available subset of the MIMI
 
 > MIMIC-IV Clinical Database Demo v2.2 — dataset, documentation, files, licence, and citation: 
 https://physionet.org/content/mimic-iv-demo/2.2/
+
+
+## 11. Source Tables
+The following tables from the MIMIC-IV Demo database are used:
+
+patients
+
+admissions
+
+icustays
+
+labevents
+
+chartevents
+
+d_labitems
+
+diagnoses_icd
+
+d_icd_diagnoses
+
+prescriptions
+
+transfers
