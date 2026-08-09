@@ -1,5 +1,5 @@
-# ClinData Explorer
-### *AI-Powered Cohort & Data Quality Explorer for MIMIC-IV*
+
+#*AI-Powered Cohort & Data Quality Explorer *
 
 > **Track 2 – AI for Smarter Patient Care Hackathon**
 
