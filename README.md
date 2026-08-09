@@ -7,6 +7,21 @@ tables, making it difficult for researchers to quickly define patient
 cohorts, retrieve relevant records, and determine whether the available data
 is reliable enough for a specific analysis.
 
+Researchers may need to understand:
+
+- Which patients satisfy specific research criteria?
+- What inclusion and exclusion criteria were applied?
+- What SQL query was used to retrieve the data?
+- Are important measurements missing?
+- Are measurements recorded using different units?
+- Are there inconsistent or duplicated records?
+- What coding patterns exist in the dataset?
+- Which database tables were used to produce a result?
+- Are the findings supported by the available data?
+
+Traditional database querying requires technical SQL knowledge and does not
+always provide an easy way to understand the quality and provenance of the
+retrieved data.
 
 ## 1. Project Overview
 
