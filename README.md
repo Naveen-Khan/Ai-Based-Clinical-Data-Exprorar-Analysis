@@ -1,11 +1,16 @@
-
-# ClinData Exprorar: AI-Powered Cohort & Data Quality Explorer 
+# ClinData Explorer: AI-Powered Cohort & Data Quality Explorer
 
 > **Track 2 – AI for Smarter Patient Care Hackathon**
 
+---
+
+## 1. Project Title
+
+**ClinData Explorer** – An AI-powered web application for clinical researchers to define patient cohorts, audit data quality, and trace provenance using natural language.
 
 ---
-## 1. Problem Statement
+
+## 2. Problem Statement
 
 Hospital data is complex, fragmented, and messy. A single admission spans multiple tables (labs, medications, diagnoses, procedures, transfers, ICU observations). Researchers spend hours writing SQL and manually checking for data errors before they can even begin analysis.
 
@@ -18,7 +23,7 @@ All without sacrificing reproducibility or safety.
 
 ---
 
-## 2. Proposed Solution
+## 3. Proposed Solution
 
 The system allows researchers to ask questions using natural language instead of writing SQL manually. The system then:
 
@@ -26,7 +31,7 @@ The system allows researchers to ask questions using natural language instead of
 2. Generates human-readable inclusion/exclusion criteria
 3. Converts requirements into SQL
 4. Executes the query and retrieves records
-5. Performs data-quality analysis 
+5. Performs data-quality analysis (12 rules)
 6. Identifies quality flags (missing values, duplicates, unit variations, temporal misalignments)
 7. Shows source tables and provenance
 8. Provides an explainable AI-generated summary
@@ -35,18 +40,20 @@ The system allows researchers to ask questions using natural language instead of
 
 ---
 
-## 3. Target Users
+## 4. Project Objective
 
-- Clinical-data researchers
-- Healthcare data teams
-- Clinical research students
-- Educators working with structured clinical datasets
+To build a transparent, reproducible, and user-friendly web application that empowers clinical researchers to:
 
-**Not intended for clinical decision-making.**
+- Define patient cohorts using natural language
+- Automatically assess the fitness of the underlying data for analysis
+- Trace every result back to its exact source (table, field, record ID)
+- Generate structured, AI-powered plain-English summaries for research communication
+
+The goal is to **accelerate the data preparation phase** of clinical research while maintaining full auditability.
 
 ---
 
-## 4. Track Selection
+## 5. Selected Track — Track 2
 
 **Track 2 — Cohort & Data Quality Explorer**
 
@@ -60,8 +67,18 @@ The system focuses on:
 
 ---
 
+## 6. Target Users
 
-## 4. System Workflow
+- Clinical-data researchers
+- Healthcare data teams
+- Clinical research students
+- Educators working with structured clinical datasets
+
+**Not intended for clinical decision-making.**
+
+---
+
+## 7. System Workflow / Data Flow
 
 ```text
 Natural Language Query
@@ -70,26 +87,24 @@ Cohort Interpretation
         ↓
 Inclusion / Exclusion Logic
         ↓
-Text-to-SQL
+Text-to-SQL (Gemini)
         ↓
 SQL Validation
         ↓
-Database Query
+Database Query (SQLite)
         ↓
 Retrieved Cohort / Records
         ↓
-Relevant Data Quality Analysis
+Data Quality Analysis (12 Rules)
         ↓
 Evidence & Provenance
         ↓
-Explainable Result
+AI-Generated Summary (Gemini)
         ↓
-AI-Generated Summary
-
+Structured JSON Response
 ```
----
 
-## 6. Features
+## 8. Features
 
 | Feature | Description |
 |---------|-------------|
@@ -101,28 +116,47 @@ AI-Generated Summary
 | **AI Summary** | Gemini-powered plain-English summary – research-only, never clinical. |
 
 ---
+##9. AI Method
+The system uses Google Gemini (via LangChain) for two distinct tasks:
+
+### Text-to-SQL Translation:
+A zero-shot prompt containing the complete database schema is passed to Gemini. The model generates a valid SQLite SELECT query with explicit inclusion and exclusion criteria. Strict prompt engineering ensures the AI never generates destructive commands (DROP, DELETE, UPDATE) and refuses clinical advice requests.
+
+### Cohort Summarization:
+After data retrieval and quality analysis, the system passes the cohort statistics, quality flags, and query logic to Gemini. The model returns a structured plain-English summary (in JSON format) that explains the cohort, highlights key findings, and lists limitations—all while adhering to the "research-only" mandate.
+
+LangChain is used as the orchestration layer to manage prompt templating, schema injection, and output parsing.
+
+## 10. Dataset
+MIMIC-IV Clinical Database Demo v2.2 – a publicly available subset of the MIMIC-IV database.
+
+> MIMIC-IV Clinical Database Demo v2.2 — dataset, documentation, files, licence, and citation: 
+https://physionet.org/content/mimic-iv-demo/2.2/
+
+
+
+
 
 ## 7. Tech Stack
 
 | Layer | Technology |
 |-------|------------|
 | **Backend** | FastAPI (Python), SQLite, SQLAlchemy, Pandas, LangChain |
-| **AI** | Google Gemini (Text-to-SQL & Summarization) |
-| **Frontend** | Next.js 14, Tailwind CSS, Axios |
-| **Server** | Uvicorn (ASGI) |
+| **AI** | Google Gemini LLM (Text-to-SQL & Summarization)->2.5 flash |
+| **Frontend** | Next.js 14, Tailwind CSS |
+
 
 ---
 
 ## 8. Quick Start
 
 ### Prerequisites
-- Python 3.9+
+- Python 3.11
 - Node.js 18+
 - Google Gemini API Key ([Get here](https://aistudio.google.com/apikey))
 
 ### Backend Setup
 ```bash
 cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+activate envroment variable: venv\Scripts\activate
+install dependancy : pip install -r requirements.txt
