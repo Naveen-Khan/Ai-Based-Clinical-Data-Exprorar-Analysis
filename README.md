@@ -4,7 +4,7 @@
 > **Track 2 – AI for Smarter Patient Care Hackathon**
 
 
-
+---
 ## 1. Problem Statement
 
 Hospital data is complex, fragmented, and messy. A single admission spans multiple tables (labs, medications, diagnoses, procedures, transfers, ICU observations). Researchers spend hours writing SQL and manually checking for data errors before they can even begin analysis.
