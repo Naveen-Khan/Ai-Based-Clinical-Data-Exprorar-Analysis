@@ -1,16 +1,12 @@
 # AI-Powered Clinical Data Explorer
 
-## AI for Smarter Patient Care — Track 2
+## 1. Problem Statement
 
-A transparent, AI-powered research prototype that helps clinical-data
-researchers define patient cohorts, query structured clinical data,
-identify relevant data-quality issues, and explore evidence and data
-provenance.
+Clinical research data is often stored across multiple structured database
+tables, making it difficult for researchers to quickly define patient
+cohorts, retrieve relevant records, and determine whether the available data
+is reliable enough for a specific analysis.
 
-> **Research and educational prototype only. Not for clinical use.
-> Do not use for diagnosis, treatment, triage, or emergency decisions.**
-
----
 
 ## 1. Project Overview
 
