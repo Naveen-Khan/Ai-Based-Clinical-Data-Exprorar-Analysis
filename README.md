@@ -157,7 +157,7 @@ prescriptions
 
 transfers
 
-
+---
 
 ## 12. Tech Stack
 
@@ -167,9 +167,6 @@ transfers
 | **AI** | Google Gemini LLM (Text-to-SQL & Summarization)->2.5 flash |
 | **Frontend** | Next.js 14, Tailwind CSS |
 
-# 🏥 AI-Based Clinical Data Explorer & Analysis
-
-A modern full‑stack application designed to explore and analyze clinical data (MIMIC‑IV Demo) with built‑in data quality checks and natural language querying.
 
 ---
 
