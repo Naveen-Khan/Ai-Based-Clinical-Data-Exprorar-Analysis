@@ -22,6 +22,31 @@ Researchers may need to understand:
 Traditional database querying requires technical SQL knowledge and does not
 always provide an easy way to understand the quality and provenance of the
 retrieved data.
+## 2. Proposed Solution
+
+**AI-Powered Clinical Data Explorer** is a conversational research tool
+designed for clinical-data exploration.
+
+The system allows researchers to ask questions using natural language
+instead of writing SQL manually.
+
+The system then:
+
+1. Interprets the user's research question.
+2. Identifies the cohort requirements.
+3. Generates human-readable inclusion and exclusion criteria.
+4. Converts the requirements into SQL.
+5. Validates and executes the SQL query.
+6. Retrieves the relevant clinical records.
+7. Performs context-relevant data-quality analysis.
+8. Identifies quality flags.
+9. Shows the source tables used for the analysis.
+10. Provides an explainable AI-generated summary.
+
+The system is designed to make the analysis **transparent, traceable, and
+research-oriented**.
+
+---
 
 ## 1. Project Overview
 
