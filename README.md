@@ -85,3 +85,44 @@ Evidence & Provenance
 Explainable Result
         ↓
 AI-Generated Summary
+
+
+---
+
+## 6. Features
+
+| Feature | Description |
+|---------|-------------|
+| **Cohort Explorer** | Define patient cohorts using natural language; visible inclusion/exclusion logic. |
+| **Data Quality Audit** | Automated detection of missing values, duplicates, temporal misalignments, unit variations (12 rules). |
+| **Measurement Analysis** | Full visibility into chart events, lab events coverage, and prescription timeline alignments. |
+| **Provenance & Evidence** | Every finding traces back to source table, field, record ID, and timestamp. |
+| **Dataset Insights** | Full dataset-level analysis – table inventory, missingness, unit variation, ICD coding patterns. |
+| **AI Summary** | Gemini-powered plain-English summary – research-only, never clinical. |
+
+---
+
+## 7. Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Backend** | FastAPI (Python), SQLite, SQLAlchemy, Pandas, LangChain |
+| **AI** | Google Gemini (Text-to-SQL & Summarization) |
+| **Frontend** | Next.js 14, Tailwind CSS, Axios |
+| **Server** | Uvicorn (ASGI) |
+
+---
+
+## 8. Quick Start
+
+### Prerequisites
+- Python 3.9+
+- Node.js 18+
+- Google Gemini API Key ([Get here](https://aistudio.google.com/apikey))
+
+### Backend Setup
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
