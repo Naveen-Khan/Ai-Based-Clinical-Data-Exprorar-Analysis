@@ -305,17 +305,18 @@ App: http://localhost:3000
 
 ---
 
-##
-Screenshots
+
+## Screenshots
 
 ### Example Query 1 – Cohort Discovery
-![Example 1 – Part 1](images/example1_part1.jpg)
-![Example 1 – Part 2](images/example1_part2.jpg)
+![Example 1 Part 1](images/example1_part1.jpeg)
+![Example 1 Part 2](images/example1_part2.jpeg)
 
-### Example Query 2 – Data Quality & Provenance
-![Example 2 – Part 1](images/example2_part1.jpg)
-![Example 2 – Part 2](images/example2_part2.jpg)
-![Example 2 – Part 3](images/example2_part3.jpg)
+### Example Query 2 – Data Quality & AI Summary
+![Example 2 Part 1](images/example2part1.jpeg)
+![Example 2 Part 2](images/example2part2.jpeg)
+![Example 2 Part 3](images/example2part3.jpeg)
+
 ---
 
 ## 22. License & Attribution
