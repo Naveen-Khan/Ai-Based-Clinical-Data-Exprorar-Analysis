@@ -302,14 +302,20 @@ npm install
 npm run dev
 ```
 App: http://localhost:3000
+
 ---
 
-### 21.Usage
-Cover page → Launch Dashboard
+##
+Screenshots
 
-New Analysis → Type question or click sample prompt → Execute
+### Example Query 1 – Cohort Discovery
+![Example 1 – Part 1](images/example1_part1.jpg)
+![Example 1 – Part 2](images/example1_part2.jpg)
 
-View Results → SQL, cohort data, quality flags, provenance, AI summary
+### Example Query 2 – Data Quality & Provenance
+![Example 2 – Part 1](images/example2_part1.jpg)
+![Example 2 – Part 2](images/example2_part2.jpg)
+![Example 2 – Part 3](images/example2_part3.jpg)
 ---
 
 ## 22. License & Attribution
