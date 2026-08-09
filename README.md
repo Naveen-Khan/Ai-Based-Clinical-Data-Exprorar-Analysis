@@ -26,7 +26,7 @@ The system allows researchers to ask questions using natural language instead of
 2. Generates human-readable inclusion/exclusion criteria
 3. Converts requirements into SQL
 4. Executes the query and retrieves records
-5. Performs data-quality analysis (12 rules)
+5. Performs data-quality analysis 
 6. Identifies quality flags (missing values, duplicates, unit variations, temporal misalignments)
 7. Shows source tables and provenance
 8. Provides an explainable AI-generated summary
