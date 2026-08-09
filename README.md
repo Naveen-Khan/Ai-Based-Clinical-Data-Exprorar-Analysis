@@ -156,3 +156,70 @@ d_icd_diagnoses
 prescriptions
 
 transfers
+
+
+
+## 12. Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Backend** | FastAPI (Python), SQLite, SQLAlchemy, Pandas, LangChain |
+| **AI** | Google Gemini LLM (Text-to-SQL & Summarization)->2.5 flash |
+| **Frontend** | Next.js 14, Tailwind CSS |
+
+# 🏥 AI-Based Clinical Data Explorer & Analysis
+
+A modern full‑stack application designed to explore and analyze clinical data (MIMIC‑IV Demo) with built‑in data quality checks and natural language querying.
+
+---
+
+## 13. System Architecture
+
+The application follows a **modern full‑stack architecture** with clear separation of concerns:
+
+### 🔹 Frontend (Next.js)
+- Interactive user interface
+- Manages state and user workflows
+- Communicates with backend via Fast API calls
+
+### 🔹 Backend (FastAPI)
+
+- Orchestrates AI pipeline and database interactions
+
+### 🔹 AI Layer (LangChain + Gemini)
+- Translates **natural language → SQL**
+- Generates **plain‑English summaries** of query results
+
+### 🔹 Database (SQLite + MIMIC‑IV Demo)
+- Stores clinical dataset (read‑only)
+- Lightweight and container‑agnostic
+
+### 🔹 Data Quality Engine
+- Applies **12 documented rules** to detect:
+  - Missing values
+  - Duplicates
+  - Unit variations
+  - Temporal misalignments
+
+---
+
+## 14 Data Quality Approach
+
+**12 documented rules** (registry in `quality_rules.py`):
+
+| Rule ID | Name | Severity |
+|---------|------|----------|
+| DQ‑001 | Missing Value Check | WARNING |
+| DQ‑002 | Exact Duplicate Row Check | ERROR |
+| DQ‑003 | Admission/Discharge Temporal Misalignment | ERROR |
+| DQ‑004 | ICU Intime/Outtime Temporal Misalignment | ERROR |
+| DQ‑005 | Prescription Start/Stop Temporal Misalignment | WARNING |
+| DQ‑006 | Chartevent Storetime Before Charttime | INFO |
+| DQ‑007 | Lab Event Unit Variation | WARNING |
+| DQ‑008 | Chart Event Unit Variation | WARNING |
+| DQ‑009 | Mixed ICD Version Coding | WARNING |
+| DQ‑010 | Implausible Age | ERROR |
+| DQ‑011 | Invalid Lab Value | WARNING |
+| DQ‑012 | Missing Discharge Location | INFO |
+
+All findings are **non‑destructive** – they flag issues without altering data. Corrections require human review and are reversible.
