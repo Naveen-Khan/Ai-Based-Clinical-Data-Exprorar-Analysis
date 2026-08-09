@@ -116,7 +116,7 @@ Structured JSON Response
 | **AI Summary** | Gemini-powered plain-English summary – research-only, never clinical. |
 
 ---
-##9. AI Method
+## 9. AI Method
 The system uses Google Gemini (via LangChain) for two distinct tasks:
 
 ### Text-to-SQL Translation:
@@ -132,31 +132,3 @@ MIMIC-IV Clinical Database Demo v2.2 – a publicly available subset of the MIMI
 
 > MIMIC-IV Clinical Database Demo v2.2 — dataset, documentation, files, licence, and citation: 
 https://physionet.org/content/mimic-iv-demo/2.2/
-
-
-
-
-
-## 7. Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **Backend** | FastAPI (Python), SQLite, SQLAlchemy, Pandas, LangChain |
-| **AI** | Google Gemini LLM (Text-to-SQL & Summarization)->2.5 flash |
-| **Frontend** | Next.js 14, Tailwind CSS |
-
-
----
-
-## 8. Quick Start
-
-### Prerequisites
-- Python 3.11
-- Node.js 18+
-- Google Gemini API Key ([Get here](https://aistudio.google.com/apikey))
-
-### Backend Setup
-```bash
-cd backend
-activate envroment variable: venv\Scripts\activate
-install dependancy : pip install -r requirements.txt
