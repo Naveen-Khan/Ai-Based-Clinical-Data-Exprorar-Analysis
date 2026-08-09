@@ -187,9 +187,6 @@ The application follows a **modern full‑stack architecture** with clear separa
 - Translates **natural language → SQL**
 - Generates **plain‑English summaries** of query results
 
-**🔹 Database (SQLite + MIMIC‑IV Demo)**
-- Stores clinical dataset (read‑only)
-- Lightweight and container‑agnostic
 
 **🔹 Data Quality Engine**
 - Applies **12 documented rules** to detect:
