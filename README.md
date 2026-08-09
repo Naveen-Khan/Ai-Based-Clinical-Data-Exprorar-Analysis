@@ -8,7 +8,7 @@
 
 **ClinData Explorer** – An AI-powered web application for clinical researchers to define patient cohorts, audit data quality, and trace provenance using natural language.
 
----
+
 
 ## 2. Problem Statement
 
