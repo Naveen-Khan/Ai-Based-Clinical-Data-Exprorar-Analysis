@@ -1,5 +1,5 @@
 
-#*AI-Powered Cohort & Data Quality Explorer *
+# *AI-Powered Cohort & Data Quality Explorer *
 
 > **Track 2 – AI for Smarter Patient Care Hackathon**
 
