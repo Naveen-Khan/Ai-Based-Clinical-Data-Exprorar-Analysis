@@ -60,9 +60,6 @@ The system focuses on:
 
 ---
 
-## 5. System Workflow
-
----
 
 ## 4. System Workflow
 
