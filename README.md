@@ -3,7 +3,7 @@
 
 > **Track 2 – AI for Smarter Patient Care Hackathon**
 
----
+
 
 ## 1. Problem Statement
 
