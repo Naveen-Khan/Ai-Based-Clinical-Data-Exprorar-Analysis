@@ -177,24 +177,24 @@ A modern full‑stack application designed to explore and analyze clinical data 
 
 The application follows a **modern full‑stack architecture** with clear separation of concerns:
 
-### 🔹 Frontend (Next.js)
+ **🔹 Frontend (Next.js)**
 - Interactive user interface
 - Manages state and user workflows
 - Communicates with backend via Fast API calls
 
-### 🔹 Backend (FastAPI)
+**🔹 Backend (FastAPI)**
 
 - Orchestrates AI pipeline and database interactions
 
-### 🔹 AI Layer (LangChain + Gemini)
+ **🔹 AI Layer (LangChain + Gemini)**
 - Translates **natural language → SQL**
 - Generates **plain‑English summaries** of query results
 
-### 🔹 Database (SQLite + MIMIC‑IV Demo)
+**🔹 Database (SQLite + MIMIC‑IV Demo)**
 - Stores clinical dataset (read‑only)
 - Lightweight and container‑agnostic
 
-### 🔹 Data Quality Engine
+**🔹 Data Quality Engine**
 - Applies **12 documented rules** to detect:
   - Missing values
   - Duplicates
@@ -203,7 +203,16 @@ The application follows a **modern full‑stack architecture** with clear separa
 
 ---
 
-## 14 Data Quality Approach
+## 14. Design Principles
+
+- **Transparency**: All SQL, logic, provenance visible – no black boxes.
+- **AI as Tool**: Gemini used only for translation and summarisation; fallback ensures correctness.
+- **Data Preservation**: Original data never modified; flags reversible and documented.
+- **Research‑Only**: Clear separation of source data, computed results, quality flags, AI explanations.
+- **Auditable**: Every finding traces to table, field, record ID, subject ID, timestamp.
+
+---
+## 15 Data Quality Approach
 
 **12 documented rules** (registry in `quality_rules.py`):
 
@@ -223,3 +232,97 @@ The application follows a **modern full‑stack architecture** with clear separa
 | DQ‑012 | Missing Discharge Location | INFO |
 
 All findings are **non‑destructive** – they flag issues without altering data. Corrections require human review and are reversible.
+
+---
+
+## 16. Provenance Approach
+
+- **Source tables** extracted from SQL.
+- **Field‑level provenance** includes table, column, subject ID, original value.
+- **Record identifiers** (`subject_id`, `hadm_id`, `stay_id`, `row_id`) are attached.
+- **Timestamp** included for temporal checks.
+- Frontend labels: **SOURCE**, **QUALITY**, **EVIDENCE** to distinguish provenance types.
+
+---
+## 17. Safety & Intended Use
+
+### ⚠️ Research & Educational Prototype – Not for Clinical Use
+
+- **Intended**: Retrospective cohort discovery, data quality inspection, research exploration, education.
+- **Prohibited**: Diagnosis, treatment, triage, clinical decision‑making, patient‑specific recommendations, re‑identification.
+- **Safety Features**:
+  - Prominent safety banner on every page.
+  - AI content visually distinguished from source data.
+  - No data modification – all corrections reversible.
+  - Full provenance for traceability.
+  - Human review required for any suggested correction.
+- **Data Limitations**: 100 patients, single centre, date‑shifted, no free‑text notes.
+
+---
+## 18. Installation
+
+### Prerequisites
+- Python 3.11
+- Node.js 18+
+- Google Gemini API key ([get one](https://aistudio.google.com/apikey))
+
+---
+## 19. Backend Setup
+
+### Navigate
+```bash
+cd backend
+```
+
+### active virtual environment
+```
+source venv/bin/activate
+```
+### Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### Api key in .env (inside backend/)
+env
+```
+GOOGLE_API_KEY=your-google-gemini-api-ke
+```
+### Run backend
+```
+uvicorn app.app:app --reload --host 0.0.0.0 --port 8000
+```
+API: http://localhost:8000
+
+---
+## 20 Frontend Setup
+Navigate
+```
+cd frontend
+```
+### Install dependencies
+```
+npm install
+```
+### Run frontend
+```
+npm run dev
+```
+App: http://localhost:3000
+---
+
+### 21.Usage
+Cover page → Launch Dashboard
+
+New Analysis → Type question or click sample prompt → Execute
+
+View Results → SQL, cohort data, quality flags, provenance, AI summary
+---
+
+## 22. License & Attribution
+Dataset: MIMIC‑IV Clinical Database Demo v2.2 – PhysioNet
+https://physionet.org/content/mimic-iv-demo/2.2/ | DOI: 10.13026/dp1f-ex47
+
+Code: MIT License
+
+Built for: AI for Smarter Patient Care Hackathon (2026)
+
